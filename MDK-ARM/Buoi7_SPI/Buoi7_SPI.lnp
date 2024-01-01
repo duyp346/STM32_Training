@@ -1,0 +1,28 @@
+--cpu=Cortex-M4.fp
+"buoi7_spi\startup_stm32f411xe.o"
+"buoi7_spi\main.o"
+"buoi7_spi\gpio.o"
+"buoi7_spi\spi.o"
+"buoi7_spi\stm32f4xx_it.o"
+"buoi7_spi\stm32f4xx_hal_msp.o"
+"buoi7_spi\stm32f4xx_hal_spi.o"
+"buoi7_spi\stm32f4xx_hal_rcc.o"
+"buoi7_spi\stm32f4xx_hal_rcc_ex.o"
+"buoi7_spi\stm32f4xx_hal_flash.o"
+"buoi7_spi\stm32f4xx_hal_flash_ex.o"
+"buoi7_spi\stm32f4xx_hal_flash_ramfunc.o"
+"buoi7_spi\stm32f4xx_hal_gpio.o"
+"buoi7_spi\stm32f4xx_hal_dma_ex.o"
+"buoi7_spi\stm32f4xx_hal_dma.o"
+"buoi7_spi\stm32f4xx_hal_pwr.o"
+"buoi7_spi\stm32f4xx_hal_pwr_ex.o"
+"buoi7_spi\stm32f4xx_hal_cortex.o"
+"buoi7_spi\stm32f4xx_hal.o"
+"buoi7_spi\stm32f4xx_hal_exti.o"
+"buoi7_spi\stm32f4xx_hal_tim.o"
+"buoi7_spi\stm32f4xx_hal_tim_ex.o"
+"buoi7_spi\system_stm32f4xx.o"
+--strict --scatter "Buoi7_SPI\Buoi7_SPI.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Buoi7_SPI.map" -o Buoi7_SPI\Buoi7_SPI.axf
