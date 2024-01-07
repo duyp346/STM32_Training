@@ -2,18 +2,11 @@
 #include "main.h"
 #include "i2c.h"
 #include "gpio.h"
-
-/* USER CODE BEGIN Includes */
 #include "lib_lcd.h"
-/* USER CODE END Includes */
-
-/* USER CODE BEGIN PD */
 #define DS1307_ADDRESS 0xd0
-/* USER CODE END PD */
 
 void SystemClock_Config(void);
 
-/* USER CODE BEGIN 0 */
 uint8_t decToBcd(int val)
 {
   return (uint8_t)( (val/10*16) + (val%10) );
@@ -25,17 +18,17 @@ int bcdToDec(uint8_t val)
 }
 typedef struct
 	{
-	uint8_t seconds;
-	uint8_t minutes;
-	uint8_t hour;
-	uint8_t dayofweek;
-	uint8_t dayofmonth;
-	uint8_t month;
-	uint8_t year;
+	uint8_t giay;
+	uint8_t phut;
+	uint8_t gio;
+	uint8_t thu;
+	uint8_t ngay;
+	uint8_t thang;
+	uint8_t nam;
 	
-} TIME;
-TIME time;
-void Set_Time (uint8_t sec, uint8_t min, uint8_t hour, uint8_t dow, uint8_t dom, uint8_t month, uint8_t year)
+} ThoiGian;
+ThoiGian time;
+void Dat_thoigian (uint8_t sec, uint8_t min, uint8_t hour, uint8_t dow, uint8_t dom, uint8_t month, uint8_t year)
 {
 	uint8_t set_time[7];
 	set_time[0] = decToBcd(sec);
@@ -48,50 +41,35 @@ void Set_Time (uint8_t sec, uint8_t min, uint8_t hour, uint8_t dow, uint8_t dom,
 
 	HAL_I2C_Mem_Write(&hi2c1, DS1307_ADDRESS, 0x00, 1, set_time, 7, 10);
 }
-void Get_Time (void)
+void docgiatri(void)
 {
 	uint8_t get_time[7];
 	HAL_I2C_Mem_Read(&hi2c1, DS1307_ADDRESS, 0x00, 1, get_time, 7, 10);
-	time.seconds = bcdToDec(get_time[0]);
-	time.minutes = bcdToDec(get_time[1]);
-	time.hour = bcdToDec(get_time[2]);
-	time.dayofweek = bcdToDec(get_time[3]);
-	time.dayofmonth = bcdToDec(get_time[4]);
-	time.month = bcdToDec(get_time[5]);
-	time.year = bcdToDec(get_time[6]);
+	time.giay = bcdToDec(get_time[0]);
+	time.phut = bcdToDec(get_time[1]);
+	time.gio = bcdToDec(get_time[2]);
+	time.thu = bcdToDec(get_time[3]);
+	time.ngay = bcdToDec(get_time[4]);
+	time.thang = bcdToDec(get_time[5]);
+	time.nam = bcdToDec(get_time[6]);
 }
-/* USER CODE END 0 */
 
 int main(void)
 {
 
   HAL_Init();
 
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
   SystemClock_Config();
 
 
   MX_GPIO_Init();
   MX_I2C1_Init();
-  /* USER CODE BEGIN 2 */
-//	blink_led(10);
-Set_Time (00,03,23,2,1,1,24);
-  /* USER CODE END 2 */
-
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
+Dat_thoigian(00,19,23,2,7,1,24);
+  
   while (1)
   {
-			Get_Time ();
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
+		docgiatri();
   }
-  /* USER CODE END 3 */
 }
 
 void SystemClock_Config(void)

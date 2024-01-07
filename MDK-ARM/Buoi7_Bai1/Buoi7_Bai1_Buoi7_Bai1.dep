@@ -35,7 +35,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6527E349)
 I (../Core/Inc/i2c.h)(0x658CCFF2)
 I (../Core/Inc/main.h)(0x658CCFF6)
 I (../Core/Inc/gpio.h)(0x658CCFEF)
-F (../Core/Src/main.c)(0x6592E225)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Buoi7_Bai1-I"D:\keli c v5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\keli c v5\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE-o buoi7_bai1\main.o --omf_browse buoi7_bai1\main.crf --depend buoi7_bai1\main.d)
+F (../Core/Src/main.c)(0x659AD147)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Buoi7_Bai1-I"D:\keli c v5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\keli c v5\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE-o buoi7_bai1\main.o --omf_browse buoi7_bai1\main.crf --depend buoi7_bai1\main.d)
 I (../Core/Inc/main.h)(0x658CCFF6)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6527E349)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x658CCFF4)
